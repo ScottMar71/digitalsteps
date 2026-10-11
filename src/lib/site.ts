@@ -2,6 +2,7 @@ export const site = {
   name: "Digital Steps",
   description:
     "Friendly IT tuition, digital skills training and practical technology solutions for individuals and businesses.",
+  url: "https://digital-steps.co.uk",
   email: "hello@digitalsteps.co.uk",
   belief: "Everyone deserves the confidence to take their next digital step.",
 } as const;

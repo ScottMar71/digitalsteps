@@ -11,4 +11,4 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-The contact form opens the visitor’s email app addressed to `hello@digitalsteps.co.uk`.
+The public site address is [https://digital-steps.co.uk](https://digital-steps.co.uk). The contact form opens the visitor’s email app addressed to `hello@digitalsteps.co.uk`.

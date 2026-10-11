@@ -11,11 +11,9 @@ const dmSans = DM_Sans({
   weight: ["400", "500"],
 });
 
-const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
-
 export const metadata: Metadata = {
   metadataBase: new URL(
-    productionHost ? `https://${productionHost}` : "http://localhost:3000",
+    process.env.NODE_ENV === "development" ? "http://localhost:3000" : site.url,
   ),
   title: {
     default: site.name,
