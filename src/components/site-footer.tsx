@@ -10,9 +10,8 @@ export async function SiteFooter() {
     <footer className="mt-auto bg-deep text-warm">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="flex items-center gap-3 text-lg leading-6 font-medium">
-            <Logo className="h-8 w-8" tone="light" />
-            {site.name}
+          <p className="w-fit rounded-2xl bg-warm px-3 py-2">
+            <Logo className="h-14 w-auto" />
           </p>
           <p className="mt-4 max-w-sm text-base leading-7 text-mint">{site.strapline}</p>
           <p className="mt-4 text-sm leading-6 text-warm/90">

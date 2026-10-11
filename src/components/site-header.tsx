@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { nav, site } from "@/lib/site";
+import { nav } from "@/lib/site";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -24,9 +24,8 @@ export function SiteHeader() {
     <header className="border-b border-soft bg-warm">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="flex items-center justify-between gap-4 py-4">
-          <Link href="/" className="flex items-center gap-3 text-deep" onClick={() => setOpen(false)}>
-            <Logo />
-            <span className="text-lg leading-6 font-medium">{site.name}</span>
+          <Link href="/" className="shrink-0 rounded-lg" onClick={() => setOpen(false)}>
+            <Logo priority />
           </Link>
           <button
             type="button"
