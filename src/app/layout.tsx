@@ -26,6 +26,20 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
     locale: "en_GB",
+    url: site.url,
+  },
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  email: site.email || undefined,
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Norfolk",
   },
 };
 
@@ -33,6 +47,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col text-lg leading-7 font-normal">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <a href="#main" className="skip-link">
           Skip to content
         </a>

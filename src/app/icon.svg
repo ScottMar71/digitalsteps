@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="4" fill="#163B3A"/>
-  <text x="16" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#FAFAF7">DS</text>
+  <rect width="32" height="32" rx="6" fill="#163B3A"/>
+  <rect x="5" y="18" width="5" height="8" rx="1" fill="#FAFAF7"/>
+  <rect x="13" y="13" width="5" height="13" rx="1" fill="#FAFAF7"/>
+  <rect x="21" y="8" width="5" height="18" rx="1" fill="#0AA09B"/>
+  <circle cx="23.5" cy="6" r="1.6" fill="#CDEBE4"/>
 </svg>
