@@ -1,47 +1,81 @@
 export const site = {
   name: "Digital Steps",
   description:
-    "Digital Steps helps teams turn new tools, products, and ways of working into everyday behaviour.",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
+    "Friendly IT tuition, digital skills training and practical technology solutions for individuals and businesses.",
+  email: "hello@digitalsteps.co.uk",
+  belief: "Everyone deserves the confidence to take their next digital step.",
 } as const;
 
-export const services = [
+export const nav = [
+  { href: "/learn", label: "Learn" },
+  { href: "/business", label: "Business" },
+  { href: "/solutions", label: "Solutions" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export const pathways = [
   {
     number: "01",
-    title: "Adoption programmes",
-    body: "Help customers, partners, and internal teams use a product inside the work they already do.",
+    title: "Learn",
+    body: "IT tuition and digital skills",
+    href: "/learn",
   },
   {
     number: "02",
-    title: "Capability design",
-    body: "Define the skills, practice, and feedback a role needs, then build them into the week.",
+    title: "Grow",
+    body: "Business and AI training",
+    href: "/business",
   },
   {
     number: "03",
-    title: "Learning operations",
-    body: "Create enablement a team can run again, without starting from a blank slide deck.",
+    title: "Build",
+    body: "Websites and apps",
+    href: "/solutions",
   },
 ] as const;
 
-export const steps = [
+export const destinations = [
   {
-    number: "01",
-    title: "See the real work",
-    body: "Sit with the job as it is done. Find where people stall, improvise, or quietly return to the old way.",
+    eyebrow: "Learn at your pace",
+    title: "Confidence for everyday life.",
+    body: "Computer tuition, online safety, Office skills and AI for beginners.",
+    href: "/learn",
+    label: "Learning",
   },
   {
-    number: "02",
-    title: "Name the behaviour",
-    body: "Agree the few actions that would count as success. Write them so a manager could observe them.",
+    eyebrow: "Grow with confidence",
+    title: "Capability that moves teams.",
+    body: "Workplace digital skills, staff training, AI adoption and workshops.",
+    href: "/business",
+    label: "Business",
   },
   {
-    number: "03",
-    title: "Design the steps",
-    body: "Practice, prompts, and support in the flow of work. Short enough to use on a busy day.",
+    eyebrow: "Build what matters",
+    title: "Digital tools made useful.",
+    body: "Website development, app building, automation and digital support.",
+    href: "/solutions",
+    label: "Solutions",
   },
-  {
-    number: "04",
-    title: "Watch what changes",
-    body: "Look at behaviour and operational outcomes. Adjust the steps. Treat attendance as a clue, not the result.",
-  },
+] as const;
+
+export const learningTopics = [
+  "Email and video calls",
+  "Online safety",
+  "Everyday digital skills",
+  "Office skills",
+  "AI for beginners",
+] as const;
+
+export const businessTopics = [
+  "Workplace digital skills",
+  "Staff training",
+  "AI adoption",
+  "Workshops",
+] as const;
+
+export const solutionTopics = [
+  "Website development",
+  "App building",
+  "Automation",
+  "Digital support",
 ] as const;

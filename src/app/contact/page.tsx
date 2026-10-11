@@ -1,22 +1,30 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Start a conversation with Digital Steps about a change you need people to make.",
+  description: "Tell Digital Steps which step you want to take next.",
 };
 
 export default function ContactPage() {
   return (
-    <article className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+    <article className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-2">
       <div>
-        <p className="text-sm font-medium tracking-[0.16em] text-forest uppercase">Contact</p>
-        <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-          Tell us what you want people to do differently.
+        <p className="flex items-center gap-3 text-xs font-medium tracking-[0.16em] text-deep uppercase">
+          <span className="h-px w-8 bg-fresh" aria-hidden="true" />
+          Contact
+        </p>
+        <h1 className="mt-5 text-5xl leading-[0.98] font-medium tracking-tight text-deep">
+          Your next digital step starts here.
         </h1>
-        <p className="mt-6 text-lg leading-8 text-muted">
-          A short note is enough. Name the product, process, or skill, and what “better” would look
-          like in a normal working week.
+        <p className="mt-6 text-lg leading-8 font-normal text-charcoal/85">
+          Say whether you want to learn, train a team, or build something. A short note is enough.
+        </p>
+        <p className="mt-6 text-sm font-medium text-deep">
+          <a href={`mailto:${site.email}`} className="hover:text-fresh">
+            {site.email}
+          </a>
         </p>
       </div>
       <ContactForm />

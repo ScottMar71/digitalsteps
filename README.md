@@ -1,6 +1,6 @@
 # Digital Steps
 
-Marketing site for Digital Steps, a practice that helps teams turn new tools, products, and ways of working into everyday behaviour.
+Website for Digital Steps, a teaching-led technology business. Friendly IT tuition, workplace digital skills, and practical technology solutions.
 
 ## Develop
 
@@ -11,4 +11,4 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-Set `NEXT_PUBLIC_CONTACT_EMAIL` if the contact form should open a specific inbox. Without it, the visitor’s email app opens with the message filled in and no recipient.
+The contact form opens the visitor’s email app addressed to `hello@digitalsteps.co.uk`.

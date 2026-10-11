@@ -56,7 +56,7 @@ export function ContactForm() {
         autoComplete="organization"
       />
       <div>
-        <label htmlFor="message" className="text-sm font-medium text-ink">
+        <label htmlFor="message" className="text-sm font-medium text-deep">
           What should change?
         </label>
         <textarea
@@ -67,23 +67,23 @@ export function ContactForm() {
           maxLength={2000}
           value={fields.message}
           onChange={(event) => update("message", event.target.value)}
-          className="mt-2 w-full resize-y rounded-2xl border border-line bg-paper px-4 py-3 text-ink outline-none ring-rust/40 placeholder:text-muted/70 focus:ring-2"
-          placeholder="The launch, process, or skill you need people to use in their real work."
+          className="mt-2 w-full resize-y border border-soft bg-warm px-4 py-3 font-normal text-charcoal outline-none focus:border-deep"
+          placeholder="Learning, team training, or something you want built."
         />
       </div>
       {error ? (
-        <p role="alert" className="text-sm text-rust-deep">
+        <p role="alert" className="text-sm font-medium text-deep">
           {error}
         </p>
       ) : null}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <button
           type="submit"
-          className="inline-flex h-12 items-center justify-center rounded-full bg-rust px-6 text-sm font-medium text-paper transition-colors hover:bg-rust-deep"
+          className="inline-flex h-12 items-center justify-center bg-deep px-6 text-sm font-medium text-warm hover:bg-deep/90"
         >
           Open this in your email
         </button>
-        <p className="text-sm leading-6 text-muted">
+        <p className="text-sm leading-6 font-normal text-charcoal/75">
           Your email app opens with the note filled in. This site does not store the message.
         </p>
       </div>
@@ -106,7 +106,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="text-sm font-medium text-ink">
+      <label htmlFor={id} className="text-sm font-medium text-deep">
         {label}
       </label>
       <input
@@ -117,7 +117,7 @@ function Field({
         autoComplete={autoComplete}
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-2 h-12 w-full rounded-full border border-line bg-paper px-4 text-ink outline-none ring-rust/40 focus:ring-2"
+        className="mt-2 h-12 w-full border border-soft bg-warm px-4 font-normal text-charcoal outline-none focus:border-deep"
       />
     </div>
   );

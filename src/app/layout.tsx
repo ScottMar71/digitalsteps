@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const geist = Geist({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-geist",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-dm",
+  weight: ["400", "500"],
 });
 
 const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
@@ -37,8 +33,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geist.variable} ${fraunces.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col">
+    <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col font-normal">
         <a href="#main" className="skip-link">
           Skip to content
         </a>
