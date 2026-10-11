@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
 import { OfferPage } from "@/components/offer-page";
-import { learningTopics } from "@/lib/site";
+import { areas, learningTopics } from "@/lib/site";
+
+const area = areas[0];
 
 export const metadata: Metadata = {
-  title: "Learn",
-  description:
-    "Patient computer tuition, online safety, Office skills and AI for beginners, at your pace.",
+  title: "Learning",
+  description: area.body,
 };
 
 export default function LearnPage() {
   return (
     <OfferPage
-      eyebrow="Learn at your pace"
-      title="Confidence for everyday life."
-      intro="Patient, practical help with your computer. No jargon. No pressure. Lessons move at the pace that lets the next step stick."
+      name={area.name}
+      number={area.number}
+      title={area.title}
+      line={area.line}
+      intro={area.body}
       topics={learningTopics}
+      tone={area.tone}
     />
   );
 }

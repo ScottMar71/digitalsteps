@@ -1,10 +1,11 @@
 export const site = {
   name: "Digital Steps",
-  description:
-    "Friendly IT tuition, digital skills training and practical technology solutions for individuals and businesses.",
+  description: "Technology made simple. Confidence built step by step.",
   url: "https://digital-steps.co.uk",
   email: "hello@digitalsteps.co.uk",
-  belief: "Everyone deserves the confidence to take their next digital step.",
+  strapline: "Technology made simple. Confidence built step by step.",
+  headline: "One step closer to digital confidence.",
+  barrier: "Technology shouldn't be a barrier.",
 } as const;
 
 export const nav = [
@@ -14,62 +15,50 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ] as const;
 
-export const pathways = [
+export const areas = [
   {
     number: "01",
-    title: "Learn",
-    body: "IT tuition and digital skills",
+    name: "Learning",
+    title: "Confidence for everyday life.",
+    line: "Tuition · Online safety · AI basics",
+    body: "Computer tuition, IT fundamentals, smartphones, software, online safety and AI for beginners.",
     href: "/learn",
+    tone: "mint",
   },
   {
     number: "02",
-    title: "Grow",
-    body: "Business and AI training",
+    name: "Business",
+    title: "Capability that moves teams.",
+    line: "Staff training · AI adoption · Workshops",
+    body: "Staff training, digital confidence, AI adoption and practical technology workshops for organisations.",
     href: "/business",
+    tone: "fresh",
   },
   {
     number: "03",
-    title: "Build",
-    body: "Websites and apps",
+    name: "Solutions",
+    title: "Digital tools made useful.",
+    line: "Websites · Apps · Automation",
+    body: "Website development, app building, automation and ongoing digital support.",
     href: "/solutions",
+    tone: "deep",
   },
 ] as const;
 
-export const destinations = [
-  {
-    eyebrow: "Learn at your pace",
-    title: "Confidence for everyday life.",
-    body: "Computer tuition, online safety, Office skills and AI for beginners.",
-    href: "/learn",
-    label: "Learning",
-  },
-  {
-    eyebrow: "Grow with confidence",
-    title: "Capability that moves teams.",
-    body: "Workplace digital skills, staff training, AI adoption and workshops.",
-    href: "/business",
-    label: "Business",
-  },
-  {
-    eyebrow: "Build what matters",
-    title: "Digital tools made useful.",
-    body: "Website development, app building, automation and digital support.",
-    href: "/solutions",
-    label: "Solutions",
-  },
-] as const;
+export type AreaTone = (typeof areas)[number]["tone"];
 
 export const learningTopics = [
-  "Email and video calls",
+  "Computer tuition",
+  "IT fundamentals",
+  "Smartphones",
+  "Software",
   "Online safety",
-  "Everyday digital skills",
-  "Office skills",
   "AI for beginners",
 ] as const;
 
 export const businessTopics = [
-  "Workplace digital skills",
   "Staff training",
+  "Digital confidence",
   "AI adoption",
   "Workshops",
 ] as const;
@@ -78,5 +67,5 @@ export const solutionTopics = [
   "Website development",
   "App building",
   "Automation",
-  "Digital support",
+  "Ongoing digital support",
 ] as const;

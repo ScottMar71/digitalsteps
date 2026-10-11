@@ -1,84 +1,58 @@
 import Link from "next/link";
-import { destinations, pathways, site } from "@/lib/site";
+import { ServiceCards } from "@/components/service-cards";
+import { areas, site } from "@/lib/site";
+
+const detailTone = {
+  mint: "bg-mint",
+  fresh: "bg-fresh",
+  deep: "bg-deep",
+} as const;
 
 export default function HomePage() {
   return (
     <>
-      <section className="mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)] lg:items-end">
-        <div>
-          <p className="flex items-center gap-3 text-xs font-medium tracking-[0.16em] text-deep uppercase">
-            <span className="h-px w-8 bg-fresh" aria-hidden="true" />
-            Practical skills · Patient support
-          </p>
-          <h1 className="mt-6 max-w-3xl text-5xl leading-[0.96] font-medium tracking-tight text-deep sm:text-6xl">
-            Technology made simple.{" "}
-            <span className="block">
-              Confidence built <span className="text-fresh whitespace-nowrap">step by step.</span>
-            </span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 font-normal text-charcoal/85">
-            Friendly IT tuition, digital skills training and practical technology solutions for
-            individuals and businesses.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/learn"
-              className="inline-flex h-12 items-center justify-between gap-6 bg-deep px-5 text-sm font-medium text-warm hover:bg-deep/90 sm:justify-center"
-            >
-              Explore IT courses
-              <span aria-hidden="true">→</span>
-            </Link>
-            <Link
-              href="/business"
-              className="inline-flex h-12 items-center justify-center border border-deep px-5 text-sm font-medium text-deep hover:bg-mint"
-            >
-              Business services
-            </Link>
-          </div>
-        </div>
-        <ol className="grid gap-3">
-          {pathways.map((item) => (
-            <li key={item.number}>
-              <Link
-                href={item.href}
-                className="grid grid-cols-[auto_1fr] gap-4 border border-soft bg-soft/60 px-5 py-5 hover:bg-mint"
-              >
-                <span className="text-sm font-medium text-fresh">{item.number}</span>
-                <span>
-                  <span className="block text-xl font-medium text-deep">{item.title}</span>
-                  <span className="mt-1 block text-sm font-normal text-charcoal/80">{item.body}</span>
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ol>
+      <section className="mx-auto max-w-6xl px-5 pt-16 pb-14 sm:px-8 sm:pt-24 sm:pb-16">
+        <p className="text-xs leading-4 font-medium tracking-[0.14em] text-deep uppercase">Digital Steps</p>
+        <h1 className="text-[2.5rem] leading-[1.07] font-medium sm:text-[3.5rem] sm:leading-[3.75rem] mt-4 max-w-3xl text-deep">
+          One step closer to <span className="text-fresh">digital confidence.</span>
+        </h1>
+        <p className="mt-6 max-w-xl text-charcoal">{site.barrier}</p>
+        <p className="text-xs leading-4 font-medium mt-6 max-w-md text-deep">{site.strapline}</p>
       </section>
 
-      <section className="bg-deep text-warm" aria-labelledby="belief-heading">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-          <p className="text-xs font-medium tracking-[0.16em] text-mint uppercase">Core belief</p>
-          <h2 id="belief-heading" className="mt-4 max-w-3xl text-3xl leading-tight font-medium sm:text-4xl">
-            {site.belief}
-          </h2>
-        </div>
-      </section>
+      <ServiceCards />
 
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" aria-labelledby="destinations-heading">
-        <h2 id="destinations-heading" className="text-3xl leading-tight font-medium text-deep">
-          One journey. Three destinations.
+      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24" aria-labelledby="areas-heading">
+        <h2 id="areas-heading" className="text-[2.5rem] leading-[1.07] font-medium sm:text-[3.5rem] sm:leading-[3.75rem] max-w-2xl text-deep">
+          Three service areas. One brand.
         </h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {destinations.map((item) => (
-            <article key={item.href} className="flex flex-col border border-soft bg-warm p-6">
-              <p className="text-xs font-medium tracking-[0.14em] text-fresh uppercase">{item.eyebrow}</p>
-              <h3 className="mt-4 text-2xl leading-snug font-medium text-deep">{item.title}</h3>
-              <p className="mt-3 flex-1 text-base leading-7 font-normal text-charcoal/85">{item.body}</p>
-              <Link href={item.href} className="mt-6 text-sm font-medium text-deep hover:text-fresh">
-                {item.label}
+        <div className="mt-12 grid gap-8 md:grid-cols-3">
+          {areas.map((area) => (
+            <article key={area.href}>
+              <div className={`h-2 w-16 ${detailTone[area.tone]}`} aria-hidden="true" />
+              <h3 className="mt-5 text-2xl leading-8 font-medium text-deep">Digital Steps {area.name}</h3>
+              <p className="mt-3 text-charcoal">{area.body}</p>
+              <Link href={area.href} className="text-xs leading-4 font-medium mt-5 inline-flex text-deep">
+                {area.name}
                 <span aria-hidden="true"> →</span>
               </Link>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-deep text-warm">
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-16 sm:px-8 sm:py-20 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-xs leading-4 font-medium tracking-[0.14em] text-mint uppercase">Next step</p>
+            <h2 className="mt-4 max-w-xl text-4xl leading-[2.6rem] font-medium">{site.strapline}</h2>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex h-12 items-center bg-mint px-5 text-sm leading-4 font-medium text-deep"
+          >
+            Start a conversation
+          </Link>
         </div>
       </section>
     </>

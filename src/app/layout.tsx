@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col font-normal">
+      <body className="flex min-h-full flex-col text-lg leading-7 font-normal">
         <a href="#main" className="skip-link">
           Skip to content
         </a>

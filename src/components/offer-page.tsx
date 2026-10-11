@@ -1,43 +1,68 @@
-import type { ReactNode } from "react";
 import Link from "next/link";
+import type { AreaTone } from "@/lib/site";
+
+const panel: Record<AreaTone, string> = {
+  mint: "bg-mint text-charcoal",
+  fresh: "bg-fresh text-warm",
+  deep: "bg-deep text-warm",
+};
+
+const chip: Record<AreaTone, string> = {
+  mint: "bg-mint text-deep",
+  fresh: "bg-fresh text-deep",
+  deep: "bg-deep text-warm",
+};
 
 export function OfferPage({
-  eyebrow,
+  name,
+  number,
   title,
+  line,
   intro,
   topics,
-  children,
+  tone,
 }: {
-  eyebrow: string;
+  name: string;
+  number: string;
   title: string;
+  line: string;
   intro: string;
   topics: readonly string[];
-  children?: ReactNode;
+  tone: AreaTone;
 }) {
   return (
-    <article className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-      <p className="flex items-center gap-3 text-xs font-medium tracking-[0.16em] text-deep uppercase">
-        <span className="h-px w-8 bg-fresh" aria-hidden="true" />
-        {eyebrow}
-      </p>
-      <h1 className="mt-5 max-w-3xl text-5xl leading-[0.98] font-medium tracking-tight text-deep">
-        {title}
-      </h1>
-      <p className="mt-6 max-w-2xl text-lg leading-8 font-normal text-charcoal/85">{intro}</p>
-      {children}
-      <ul className="mt-12 grid gap-3 sm:grid-cols-2">
-        {topics.map((topic) => (
-          <li key={topic} className="border border-soft bg-mint/40 px-5 py-4 text-base font-medium text-deep">
-            {topic}
-          </li>
-        ))}
-      </ul>
-      <Link
-        href="/contact"
-        className="mt-10 inline-flex h-12 items-center bg-deep px-5 text-sm font-medium text-warm hover:bg-deep/90"
-      >
-        Start a conversation
-      </Link>
+    <article>
+      <header className={`px-5 py-16 sm:px-8 sm:py-20 ${panel[tone]}`}>
+        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-16">
+          <p className="text-xs leading-4 font-medium">
+            Digital Steps
+            <span className="mt-1 block text-base leading-5">{name}</span>
+          </p>
+          <div>
+            <h1 className="text-[2.5rem] leading-[1.07] font-medium sm:text-[3.5rem] sm:leading-[3.75rem] max-w-3xl">{title}</h1>
+            <p className="text-xs leading-4 font-medium mt-4 opacity-90">{line}</p>
+            <p className="mt-10 text-5xl leading-none font-medium opacity-30" aria-hidden="true">
+              {number}
+            </p>
+          </div>
+        </div>
+      </header>
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
+        <p className="max-w-2xl text-charcoal">{intro}</p>
+        <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+          {topics.map((topic) => (
+            <li key={topic} className={`px-5 py-4 text-base leading-6 font-medium ${chip[tone]}`}>
+              {topic}
+            </li>
+          ))}
+        </ul>
+        <Link
+          href="/contact"
+          className="mt-10 inline-flex h-12 items-center bg-deep px-5 text-sm leading-4 font-medium text-warm"
+        >
+          Start a conversation
+        </Link>
+      </div>
     </article>
   );
 }

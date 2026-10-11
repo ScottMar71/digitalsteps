@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
 import { OfferPage } from "@/components/offer-page";
-import { businessTopics } from "@/lib/site";
+import { areas, businessTopics } from "@/lib/site";
+
+const area = areas[1];
 
 export const metadata: Metadata = {
   title: "Business",
-  description: "Workplace digital skills, staff training, AI adoption and workshops for teams.",
+  description: area.body,
 };
 
 export default function BusinessPage() {
   return (
     <OfferPage
-      eyebrow="Grow with confidence"
-      title="Capability that moves teams."
-      intro="Training that is professional enough for the workplace and clear enough for people who are still finding their feet with new tools."
+      name={area.name}
+      number={area.number}
+      title={area.title}
+      line={area.line}
+      intro={area.body}
       topics={businessTopics}
+      tone={area.tone}
     />
   );
 }

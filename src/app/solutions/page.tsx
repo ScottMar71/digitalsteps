@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
 import { OfferPage } from "@/components/offer-page";
-import { solutionTopics } from "@/lib/site";
+import { areas, solutionTopics } from "@/lib/site";
+
+const area = areas[2];
 
 export const metadata: Metadata = {
   title: "Solutions",
-  description: "Website development, app building, automation and practical digital support.",
+  description: area.body,
 };
 
 export default function SolutionsPage() {
   return (
     <OfferPage
-      eyebrow="Build what matters"
-      title="Digital tools made useful."
-      intro="Websites, apps and automation shaped around the people who will actually use them, with support after the build."
+      name={area.name}
+      number={area.number}
+      title={area.title}
+      line={area.line}
+      intro={area.body}
       topics={solutionTopics}
+      tone={area.tone}
     />
   );
 }
