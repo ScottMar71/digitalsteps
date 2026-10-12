@@ -1,13 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { PageShell } from "@/components/page-shell";
+
+export const metadata: Metadata = {
+  title: "Wrong step",
+};
 
 export default function NotFound() {
   return (
-    <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8">
-      <h1 className="text-4xl leading-10 font-medium text-deep">This page is not here.</h1>
-      <p className="mt-4 text-lg leading-7 text-charcoal">The link may be out of date.</p>
-      <Link href="/" className="mt-8 inline-flex h-12 items-center text-sm leading-4 font-medium text-deep underline">
-        Back to the homepage
-      </Link>
-    </div>
+    <PageShell
+      mood="miss"
+      kicker="404"
+      title="This step is not a step."
+      lede="You have arrived at a page that does not exist. It may have been a typo, a hunch, or an act of pure optimism. We looked under the keyboard. It is not there."
+    >
+      <div className="actions">
+        <Link className="button" href="/">
+          Return to solid ground
+        </Link>
+      </div>
+    </PageShell>
   );
 }
