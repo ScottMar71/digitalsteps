@@ -148,7 +148,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
           <figcaption>
             <footer>
               <strong>{t.name}</strong> · {t.context}
-              {t.example ? <span className="example-tag">Example</span> : null}
+              {t.illustrative ? <span className="example-tag">Illustrative</span> : null}
             </footer>
           </figcaption>
         </figure>
@@ -201,7 +201,7 @@ export function WorkCards({ items }: { items: CaseStudy[] }) {
           <div className="work-body">
             <span className="tile-label">
               {w.kind} · {w.client}
-              {w.example ? <span className="example-tag">Example</span> : null}
+              {w.illustrative ? <span className="example-tag">Illustrative</span> : null}
             </span>
             <h3>{w.title}</h3>
             <p>{w.summary}</p>

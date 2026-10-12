@@ -20,7 +20,8 @@ export default function PrivacyPage() {
 
           <h2>Who we are</h2>
           <p>
-            {site.name} is a teaching-led IT and digital services business based in {site.area}. We are the data
+            {site.name} is the trading name of {site.owner}, a teaching-led IT and digital services business based in{" "}
+            {site.area}. We are the data
             controller for the information described here. You can contact us about anything in this policy at{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>

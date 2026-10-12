@@ -84,9 +84,9 @@ export type ServicePage = {
 export const learning: ServicePage = {
   slug: "learning",
   title: "IT Tuition & Digital Skills",
-  metaTitle: "Computer tuition and digital skills in Norfolk",
+  metaTitle: "Computer tuition and digital skills in Norfolk and Suffolk",
   description:
-    "One-to-one computer tuition, digital confidence sessions, internet safety, email, Microsoft 365 and AI for beginners. Patient, jargon-free, in Norfolk or online.",
+    "One-to-one computer tuition, digital confidence sessions, internet safety, email, Microsoft 365 and AI for beginners. Patient, jargon-free, at home in Norfolk and Suffolk or online.",
   kicker: "Digital Steps Learning",
   headline: { before: "Learn at your pace,", em: "with someone patient." },
   lede: "One-to-one tuition for people who want to use technology without feeling foolish. Any age, any starting point. We go at your pace and nobody is ever made to feel silly for asking.",
@@ -114,7 +114,7 @@ export const learning: ServicePage = {
   priceTeaser: { text: "Sessions from £[XX] an hour. Blocks of sessions cost less.", href: "/pricing#learning" },
   faqs: [
     { q: "I am a complete beginner. Is that a problem?", a: "Not at all. Most people we work with describe themselves that way. We start wherever you are." },
-    { q: "Where do sessions happen?", a: "At your home, online over a video call, or at a quiet venue we arrange. Whatever you find easiest." },
+    { q: "Where do sessions happen?", a: "At your home anywhere in Norfolk or Suffolk, online over a video call, or at a quiet venue we arrange. Whatever you find easiest." },
     { q: "Do I need my own computer?", a: "It helps to learn on the device you will use day to day, but if you are choosing one, we can help with that too." },
     { q: "Can a family member sit in?", a: "Yes, and it is often a good idea. Just tell us when you book." },
   ],
@@ -126,7 +126,7 @@ export const business: ServicePage = {
   title: "Business & Workplace Training",
   metaTitle: "Workplace digital skills and AI training for small businesses",
   description:
-    "Staff training, Microsoft 365 adoption, AI skills and productivity workshops for small businesses and organisations in Norfolk. Designed by a teacher, so it sticks.",
+    "Staff training, Microsoft 365 adoption, AI skills and productivity workshops for small businesses and organisations in Norfolk and Suffolk. Designed by a qualified teacher, so it sticks.",
   kicker: "Digital Steps Business",
   headline: { before: "Training your team", em: "will actually use." },
   lede: "Training for small businesses and organisations that want their people to actually use the tools they pay for. Short, practical, built around your work, and delivered by someone who teaches for a living.",
@@ -165,7 +165,7 @@ export const business: ServicePage = {
 export const websites: ServicePage = {
   slug: "websites",
   title: "Website Design & Development",
-  metaTitle: "Website design and development for small businesses in Norfolk",
+  metaTitle: "Website design and development for small businesses in Norfolk and Suffolk",
   description:
     "Fast, mobile-friendly business websites built to be understood. Clear content, easy updates, search-friendly, with a handover session and ongoing support options.",
   kicker: "Digital Steps Solutions",
@@ -225,7 +225,7 @@ export const apps: ServicePage = {
 export const itSupport: ServicePage = {
   slug: "it-support",
   title: "Small Business IT Support",
-  metaTitle: "Friendly IT support for small businesses in Norfolk",
+  metaTitle: "Friendly IT support for small businesses in Norfolk and Suffolk",
   description:
     "Plain-English IT support for small businesses: troubleshooting, Microsoft 365 administration, security basics and a named person to call. Retained or ad hoc.",
   kicker: "Digital Steps Solutions",

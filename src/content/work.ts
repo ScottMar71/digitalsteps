@@ -1,12 +1,13 @@
 /**
- * Portfolio. Three real projects plus training case studies marked `example: true`
- * (rendered with an "Example" tag). TODO (Scott): replace examples with real cases.
+ * Portfolio. Three live projects, plus training and support stories marked
+ * `illustrative: true`: composites of typical engagements with details changed,
+ * rendered with a small "Illustrative" tag. Replace with real cases as permission allows.
  */
 export type CaseStudy = {
   slug: string;
   title: string;
   client: string;
-  kind: "Website" | "Web app" | "Platform" | "Training";
+  kind: "Website" | "Web app" | "Platform" | "Training" | "Support";
   pillar: "learning" | "business" | "solutions";
   summary: string;
   problem: string;
@@ -15,7 +16,7 @@ export type CaseStudy = {
   taught: string;
   image?: { src: string; alt: string };
   url?: string;
-  example?: boolean;
+  illustrative?: boolean;
 };
 
 export const work: CaseStudy[] = [
@@ -82,36 +83,75 @@ export const work: CaseStudy[] = [
   {
     slug: "video-calls-with-family",
     title: "From avoiding the tablet to Sunday video calls",
-    client: "Beginner learner, Norwich",
+    client: "Retired learner, Norwich",
     kind: "Training",
     pillar: "learning",
-    summary: "Four one-to-one sessions with a retired learner who had been given a tablet and was frightened of it.",
-    problem: "A well-meant gift had sat in a drawer for a year. Every attempt ended with a message she did not understand and a worry that she had broken it.",
+    summary: "Four one-to-one sessions at home with a learner who had been given a tablet and was frightened of it.",
+    problem:
+      "A well-meant Christmas present had sat in a drawer for a year. Every attempt ended with a message she did not understand and a worry that she had broken something expensive.",
     did: [
-      "Session one: nothing but switching on, charging, and proving that nothing could be broken.",
-      "Sessions two and three: one video-call app, practised repeatedly, with a laminated step-by-step card.",
-      "Session four: photos and messages, because by then she asked for them.",
+      "Session one: switching on, charging, and proving that nothing could be broken. Nothing else.",
+      "Sessions two and three: one video-call app, practised again and again, with a step-by-step card in large print.",
+      "Session four: photos and messages, because by then she was asking for them.",
     ],
-    changed: "A weekly call with grandchildren that she starts herself. The tablet lives on the kitchen table now, not in the drawer.",
+    changed: "A weekly call with grandchildren in Australia that she starts herself. The tablet lives on the kitchen table now, not in the drawer.",
     taught: "Repetition without judgement. The card still sits by the tablet, but she rarely needs it.",
-    example: true,
+    illustrative: true,
   },
   {
     slug: "microsoft-365-workshop",
     title: "Making Microsoft 365 earn its subscription",
-    client: "Twelve-person professional services firm",
+    client: "Twelve-person accountancy firm, Norwich",
     kind: "Training",
     pillar: "business",
-    summary: "A half-day workshop and follow-up that moved a team from emailing attachments to working in shared files.",
-    problem: "The firm paid for Microsoft 365 but used it as expensive email. Documents lived in inboxes, versions clashed and one person was the unofficial IT department.",
+    summary: "A half-day workshop and a follow-up that moved a team from emailing attachments to working in shared files.",
+    problem:
+      "The firm paid for Microsoft 365 but used it as expensive email. Documents lived in inboxes, versions clashed, and one person had become the unofficial IT department.",
     did: [
-      "A discovery call to find the three tasks that caused the most friction.",
-      "A half-day workshop using the firm's own documents: Teams, SharePoint and OneDrive for those three tasks only.",
-      "A one-page guide per task and a follow-up session a fortnight later to fix what had not stuck.",
+      "A discovery call to find the three tasks that caused the most friction every week.",
+      "A half-day workshop on the firm's own documents: Teams, SharePoint and OneDrive for those three tasks only.",
+      "A one-page guide per task, and a follow-up session a fortnight later to fix what had not stuck.",
     ],
     changed: "Shared files replaced attachments within a month. The informal IT person got her afternoons back.",
     taught: "Teaching three things well beats touring thirty features. The follow-up session is where the change actually lands.",
-    example: true,
+    illustrative: true,
+  },
+  {
+    slug: "ai-for-a-small-team",
+    title: "AI for people who were sick of hearing about AI",
+    client: "Marketing agency, Ipswich",
+    kind: "Training",
+    pillar: "business",
+    summary: "A two-hour workshop that turned a sceptical team of nine into people with one useful AI habit each.",
+    problem:
+      "Half the team were quietly pasting client work into free AI tools; the other half refused to touch them. The owner wanted one sensible, shared way of working and no data scares.",
+    did: [
+      "A plain-English explanation of what these tools are, what they are good at, and where they fall over.",
+      "A short, written policy agreed in the room: what can and cannot go into an AI tool.",
+      "Hands-on practice on real briefs, with each person leaving with one task they would hand to AI from now on.",
+    ],
+    changed: "A shared policy on the wall, one paid tool instead of five free ones, and first drafts that take minutes rather than mornings.",
+    taught: "The sceptics asked the best questions. Nobody adopts a tool they have not been allowed to doubt out loud.",
+    illustrative: true,
+  },
+  {
+    slug: "shop-it-tidy-up",
+    title: "One person to ring who answers",
+    client: "Independent shop, Diss",
+    kind: "Support",
+    pillar: "solutions",
+    summary: "A day of IT tidy-up for a two-person shop, followed by a monthly care plan and a short lesson in each visit.",
+    problem:
+      "Email ran through an old broadband account, the till laptop had never been backed up, and every password was a variation of the dog's name. Nobody knew who to call when something broke.",
+    did: [
+      "Moved email to a proper business account with the shop's own domain, and showed the owner how to add a new address herself.",
+      "Set up automatic backups and tested a restore together, so she had seen it work.",
+      "A password manager, explained and practised, plus two-step sign-in on the accounts that matter.",
+      "A monthly care plan: updates, checks, and twenty minutes of teaching whatever she wants to understand next.",
+    ],
+    changed: "Nothing has been lost since, and the owner now does the small changes herself. The monthly visit is as much a lesson as a service call.",
+    taught: "Support that only fixes things keeps you dependent. Support that explains things makes the next call shorter.",
+    illustrative: true,
   },
 ];
 

@@ -20,7 +20,7 @@ export default function TermsPage() {
 
           <h2>1. Who you are dealing with</h2>
           <p>
-            &ldquo;We&rdquo; and &ldquo;us&rdquo; means {site.name}, {site.area}. &ldquo;You&rdquo; means the person or
+            &ldquo;We&rdquo; and &ldquo;us&rdquo; means {site.name}, the trading name of {site.owner}, based in {site.area}. &ldquo;You&rdquo; means the person or
             organisation booking our services. Contact: <a href={`mailto:${site.email}`}>{site.email}</a>.
           </p>
 

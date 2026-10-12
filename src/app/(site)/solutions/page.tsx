@@ -7,7 +7,7 @@ import { workFor } from "@/content/work";
 export const metadata: Metadata = {
   title: "Websites, apps and IT support for small businesses",
   description:
-    "Digital Steps Solutions: website development, app building, automation and friendly IT support in Norfolk. Built step by step and handed over with the understanding to run it.",
+    "Digital Steps Solutions: website development, app building, automation and friendly IT support in Norfolk and Suffolk. Built step by step and handed over with the understanding to run it.",
   alternates: { canonical: "/solutions" },
 };
 

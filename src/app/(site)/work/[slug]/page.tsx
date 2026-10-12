@@ -34,7 +34,7 @@ export default async function CaseStudyPage({ params }: Params) {
       <PageHead kicker={`${item.kind} · ${item.client}`} title={item.title} lede={item.summary}>
         <ul className="meta" style={{ marginTop: "1.5rem" }}>
           <li className="pill">{item.kind}</li>
-          {item.example ? <li className="pill">Example case study</li> : null}
+          {item.illustrative ? <li className="pill">Illustrative case</li> : null}
           {item.url ? (
             <li>
               <a className="button-quiet" href={item.url} rel="noopener" target="_blank">

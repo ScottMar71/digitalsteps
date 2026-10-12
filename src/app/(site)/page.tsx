@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Band, Cta, PillarCards, Section, Steps, Testimonials, WorkCards } from "@/components/sections";
 import { site } from "@/content/site";
 import { howItWorks } from "@/content/services";
-import { testimonials } from "@/content/testimonials";
+import { testimonialsFor } from "@/content/testimonials";
 import { work } from "@/content/work";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function HomePage() {
       <section className="hero">
         <div className="container hero-split">
           <div>
-            <p className="kicker">Teaching-led IT, Norfolk</p>
+            <p className="kicker">Teaching-led IT, {site.areaShort}</p>
             <h1>
               Technology, <em>one step at a time.</em>
             </h1>
@@ -82,7 +82,9 @@ export default function HomePage() {
           </>
         }
       >
-        <Testimonials items={testimonials} />
+        <Testimonials
+          items={(["learning", "business", "solutions"] as const).flatMap((p) => testimonialsFor(p).slice(0, 1))}
+        />
       </Section>
 
       <Section

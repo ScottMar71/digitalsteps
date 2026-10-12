@@ -1,16 +1,20 @@
 /**
  * Site-wide facts. Everything a visitor can read about the business lives here.
- * TODO (Scott): confirm email, service area wording and the two policy defaults below.
  */
 export const site = {
   name: "Digital Steps",
+  /** Legal line used in Privacy and Terms. */
+  owner: "Scott Maryan",
   url: "https://digital-steps.co.uk",
   strapline: "Technology made simple. Confidence built step by step.",
   description:
-    "Digital Steps is a teaching-led IT and digital services business in Norfolk. Computer tuition and digital skills for individuals, workplace training and AI adoption for businesses, and websites, apps and automation built to be understood.",
-  email: "hello@digital-steps.co.uk",
-  area: "Norfolk, England",
-  areaDetail: "In person across Norfolk, and online anywhere in the UK.",
+    "Digital Steps is a teaching-led IT and digital services business in Norfolk and Suffolk. Computer tuition and digital skills for individuals, workplace training and AI adoption for businesses, and websites, apps and automation built to be understood.",
+  email: "support@digital-steps.co.uk",
+  linkedin: "https://www.linkedin.com/in/scott-maryan-91908556/",
+  area: "Norfolk and Suffolk, England",
+  areaShort: "Norfolk & Suffolk",
+  areaDetail: "Home visits and workplace sessions across Norfolk and Suffolk, and online anywhere in the UK.",
+  formats: "At your home, at your premises, or online.",
   responseTime: "one working day",
   founderFirstName: "Scott",
   policies: {
@@ -39,5 +43,5 @@ export const footerLinks = [
 /** The one line that follows every service: the differentiator. */
 export const taughtNotBuilt = {
   title: "Taught, not just built.",
-  body: "Digital Steps is run by a teacher. Whatever we do for you, you will understand it, be able to use it, and know what to do next. We do not hand over a box and leave.",
+  body: "Digital Steps is run by a qualified teacher. Whatever we do for you, you will understand it, be able to use it, and know what to do next. We do not hand over a box and leave.",
 } as const;

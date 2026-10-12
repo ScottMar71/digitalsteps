@@ -22,7 +22,7 @@ export default function WorkPage() {
             The problem, what we did, <em>and what changed.</em>
           </>
         }
-        lede="Every project is written up the same way, in plain English. Items marked Example are illustrative case studies while we gather permission to share real ones."
+        lede="Every project is written up the same way, in plain English: the problem, what we did, what changed, and what we taught. Stories marked Illustrative are composites of typical sessions, with details changed to protect privacy."
       />
 
       <Section id="built" title="Websites and apps">

@@ -49,7 +49,7 @@ export default function PricingPage() {
       <Section id="good-to-know" title="Good to know" narrow>
         <div className="prose">
           <p>
-            <strong>Travel.</strong> In-person sessions across Norfolk are included in the price within a reasonable
+            <strong>Travel.</strong> In-person sessions across Norfolk and Suffolk are included in the price within a reasonable
             distance; we will say up front if travel needs adding.
           </p>
           <p>
