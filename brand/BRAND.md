@@ -49,7 +49,7 @@ One warm paper, one ink, one bold accent. Nothing else at full strength.
 | `--ember-deep` | `#B83E0F` | Accent used *as text* (links, small labels). 5.1:1 on paper. |
 
 **Rules**
-- Ember is a signal, not a theme. Max one ember element per viewport unless it is the logo.
+- Ember is a signal, not a theme. Max one ember element per viewport unless it is the logo (which carries two: the first step and the dot).
 - Never set body text in ember; use `--ember-deep` for text.
 - Ink text on ember passes AA (4.5:1) — an ember button must use ink text, never white.
 - Dark sections are allowed (ink background, paper text) but only for short bands, never whole pages.
@@ -120,8 +120,8 @@ Best for: website header, print letterhead. Weakest as a 16px favicon (the line 
 Three solid ascending blocks; the top block is ember. Bold, geometric, reads at any size.
 Best for: favicon, app icon, social avatar, van/sign. Most confident of the three.
 
-### Option C — "Tile" (`option-c-tile.svg`)
-An ink rounded tile with three paper steps and an ember dot — an evolution of the original Digital Steps logo, so existing customers still recognise it.
+### Option C — "Tile" (`option-c-tile.svg`) — chosen
+An ink rounded tile with three steps and an ember dot — an evolution of the original Digital Steps logo, so existing customers still recognise it. The first step is ember (*where you start*); the dot above the top step is ember (*the next step*). The middle and top steps are paper.
 Best for: continuity with current materials; app-icon style contexts.
 
 **Usage rules (all options)**

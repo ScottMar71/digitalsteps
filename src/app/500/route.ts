@@ -27,7 +27,7 @@ const html = `<!DOCTYPE html>
   <main>
     <svg viewBox="0 0 96 96" role="img" aria-label="Digital Steps">
       <rect width="96" height="96" rx="22" fill="currentColor"/>
-      <rect x="18" y="60" width="16" height="18" rx="3" fill="#f6f3ec"/>
+      <rect x="18" y="60" width="16" height="18" rx="3" fill="#e2561f"/>
       <rect x="36" y="42" width="16" height="36" rx="3" fill="#f6f3ec"/>
       <rect x="54" y="24" width="16" height="54" rx="3" fill="#f6f3ec"/>
       <circle cx="14" cy="86" r="6" fill="#e2561f"/>

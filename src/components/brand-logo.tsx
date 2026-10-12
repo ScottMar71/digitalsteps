@@ -54,7 +54,8 @@ export function LogoMark({ variant, mood = "steady", className, title = "Digital
         <>
           {/* Steps use --logo-steps so the tile can be reversed on ink (set --logo-steps to ink). */}
           <rect width="96" height="96" rx="22" fill="currentColor" />
-          <rect x="18" y="60" width="16" height="18" rx="3" fill={`var(--logo-steps, ${paper})`} />
+          {/* The first step is ember: where you start. The dot is the next step. */}
+          <rect x="18" y="60" width="16" height="18" rx="3" fill={ember} />
           <rect x="36" y="42" width="16" height="36" rx="3" fill={`var(--logo-steps, ${paper})`} />
           <rect x="54" y="24" width="16" height="54" rx="3" fill={`var(--logo-steps, ${paper})`} />
           <circle className="logo-dot" cx={dot?.cx ?? 78} cy={dot?.cy ?? 20} r="6" fill={ember} />
