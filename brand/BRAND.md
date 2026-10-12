@@ -110,7 +110,7 @@ Calm by default.
 
 ## 8. Logo system
 
-Three options are provided in `brand/logos/` and previewed at `/brand` on the site. All three share: the step motif, a single ember element, lowercase wordmark in Instrument Sans Medium.
+**Chosen: Option C — "Tile".** Options A and B are kept in `brand/logos/` for reference and previewed at `/brand`. All three share: the step motif, a single ember element, lowercase wordmark in Instrument Sans Medium.
 
 ### Option A — "Rise" (`option-a-rise.svg`)
 One continuous line draws three steps and ends in an ember dot: *the next step*. Light, editorial, closest to the Brilean/Ravi feel.

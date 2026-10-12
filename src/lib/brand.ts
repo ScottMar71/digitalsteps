@@ -1,10 +1,7 @@
 export type LogoVariant = "rise" | "stack" | "tile";
 
-/**
- * Site-wide logo choice. Change this one value once a logo option is picked.
- * Preview all three at /brand.
- */
-export const BRAND_LOGO: LogoVariant = "stack";
+/** Site-wide logo. Option C "Tile" was chosen; the alternatives remain previewable at /brand. */
+export const BRAND_LOGO: LogoVariant = "tile";
 
 export const BRAND = {
   name: "Digital Steps",

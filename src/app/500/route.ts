@@ -26,9 +26,11 @@ const html = `<!DOCTYPE html>
 <body>
   <main>
     <svg viewBox="0 0 96 96" role="img" aria-label="Digital Steps">
-      <rect x="4" y="62" width="24" height="30" rx="6" fill="currentColor"/>
-      <rect x="34" y="36" width="24" height="56" rx="6" fill="currentColor"/>
-      <rect x="64" y="62" width="24" height="30" rx="6" fill="#e2561f"/>
+      <rect width="96" height="96" rx="22" fill="currentColor"/>
+      <rect x="18" y="60" width="16" height="18" rx="3" fill="#f6f3ec"/>
+      <rect x="36" y="42" width="16" height="36" rx="3" fill="#f6f3ec"/>
+      <rect x="54" y="24" width="16" height="54" rx="3" fill="#f6f3ec"/>
+      <circle cx="14" cy="86" r="6" fill="#e2561f"/>
     </svg>
     <p class="kicker">500</p>
     <h1>We tripped. <em>Not you, us.</em></h1>
