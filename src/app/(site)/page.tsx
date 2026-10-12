@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Band, Cta, PillarCards, Section, Steps, Testimonials, WorkCards } from "@/components/sections";
+import { HeroArt } from "@/components/hero-art";
 import { site } from "@/content/site";
 import { howItWorks } from "@/content/services";
 import { testimonialsFor } from "@/content/testimonials";
@@ -35,16 +36,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <aside className="hero-aside" aria-label="What makes Digital Steps different">
-            <p>
-              <strong>Run by a teacher.</strong> We do not just set things up and leave. You will understand what you
-              have, be able to use it, and know what to do next.
-            </p>
-            <p>
-              <strong>For everyone.</strong> Complete beginners, returners to work, small businesses and community
-              groups. {site.areaDetail}
-            </p>
-          </aside>
+          <HeroArt />
         </div>
       </section>
 
