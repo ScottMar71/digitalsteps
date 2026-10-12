@@ -1,20 +1,24 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect } from "react";
+import Link from "next/link";
 import { PageShell } from "@/components/page-shell";
 
 export default function ErrorPage({ retry }: { error: Error & { digest?: string }; retry: () => void }) {
   useEffect(() => {
-    document.title = "We fell over · Digital Steps";
+    document.title = "We tripped · Digital Steps";
   }, []);
 
   return (
     <PageShell
-      mood="fall"
+      mood="fallen"
       kicker="500"
-      title="We have fallen over."
-      lede="The server took a confident step and found a cable. This is our mess, not yours. You may judge us quietly while we pick up the biscuits."
+      title={
+        <>
+          We tripped. <em>Not you, us.</em>
+        </>
+      }
+      lede="Something on our side went wrong. Your computer is fine and you did nothing wrong. Give it a moment and try again, and we will sort the rest."
     >
       <div className="actions">
         <button className="button" type="button" onClick={() => retry()}>

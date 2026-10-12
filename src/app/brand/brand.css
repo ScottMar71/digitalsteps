@@ -1,0 +1,169 @@
+.brand {
+  width: min(72rem, 100%);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 5rem;
+}
+
+.brand section {
+  margin-top: 4.5rem;
+}
+
+.brand h2 {
+  margin: 0 0 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.brand h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.brand article p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.options {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.option-stage {
+  display: grid;
+  place-items: center;
+  min-height: 12rem;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: #fff;
+}
+
+.option-stage .logo-mark {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.option-stage .logo-word {
+  font-size: 2.25rem;
+}
+
+.option-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.option-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 6rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-2);
+  color: var(--ink);
+}
+
+.option-cell-ink {
+  --logo-steps: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.mark-lg {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.mark-sm {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mark-xs {
+  width: 1rem;
+  height: 1rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.swatches {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.swatches li {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.swatches code {
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+}
+
+.swatches span:last-child {
+  color: var(--ink-soft);
+}
+
+.swatch {
+  display: block;
+  height: 4.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.t-display {
+  margin: 0;
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.t-h2 {
+  margin: 1.5rem 0 0;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.t-lede {
+  max-width: 36rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.375rem;
+  line-height: 1.5;
+}
+
+.t-body {
+  max-width: 36rem;
+  margin: 1rem 0 1.5rem;
+  color: var(--ink-soft);
+}

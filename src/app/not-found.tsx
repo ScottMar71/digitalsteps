@@ -9,14 +9,18 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <PageShell
-      mood="miss"
+      mood="lost"
       kicker="404"
-      title="This step is not a step."
-      lede="You have arrived at a page that does not exist. It may have been a typo, a hunch, or an act of pure optimism. We looked under the keyboard. It is not there."
+      title={
+        <>
+          That page <em>has wandered off.</em>
+        </>
+      }
+      lede="You have not broken anything. The link was probably a typo, or an old address. It happens to all of us, including the people who build websites."
     >
       <div className="actions">
         <Link className="button" href="/">
-          Return to solid ground
+          Back to the start
         </Link>
       </div>
     </PageShell>
