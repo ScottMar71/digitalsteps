@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import "./site.css";
+import { site } from "@/content/site";
 
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
@@ -9,17 +11,22 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: "Digital Steps",
-    template: "%s · Digital Steps",
+    default: `${site.name} · ${site.strapline}`,
+    template: `%s · ${site.name}`,
   },
-  description:
-    "Digital Steps helps people of all ages and abilities feel confident with technology. Technology made simple. Confidence built step by step.",
+  description: site.description,
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    locale: "en_GB",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={instrumentSans.variable}>
+    <html lang="en-GB" className={instrumentSans.variable}>
       <body>{children}</body>
     </html>
   );
