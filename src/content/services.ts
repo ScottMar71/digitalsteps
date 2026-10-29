@@ -76,6 +76,7 @@ export type ServicePage = {
   steps?: { title: string; items: Step[] };
   reassure?: { title: string; body: string };
   priceTeaser: { text: string; href: string };
+  image?: { src: string; alt: string; width: number; height: number; caption: string };
   faqs: Faq[];
   topic: string;
   related?: string[];
@@ -130,6 +131,13 @@ export const business: ServicePage = {
   kicker: "Digital Steps Business",
   headline: { before: "Training your team", em: "will actually use." },
   lede: "Training for small businesses and organisations that want their people to actually use the tools they pay for. Short, practical, built around your work, and delivered by someone who teaches for a living.",
+  image: {
+    src: "/photos/workplace-training.jpg",
+    alt: "A trainer speaking to a seated audience during a workshop, with a presentation on the screen.",
+    width: 730,
+    height: 480,
+    caption: "Training in the room, with the people who will use it afterwards.",
+  },
   coverTitle: "What we train",
   cover: [
     { title: "Microsoft 365 that gets used", body: "Teams, SharePoint, OneDrive and Outlook set up and taught around how your team really works." },

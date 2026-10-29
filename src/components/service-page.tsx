@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Band, CoverList, Cta, Faq, PageHead, PriceTeaser, Reassure, Section, Steps, Testimonials, TwoTone, WorkCards } from "@/components/sections";
 import { servicePages, type ServicePage as ServicePageData } from "@/content/services";
@@ -11,7 +12,21 @@ export function ServicePage({ data, pillar }: { data: ServicePageData; pillar: T
 
   return (
     <>
-      <PageHead kicker={data.kicker} title={<TwoTone {...data.headline} />} lede={data.lede} />
+      <PageHead kicker={data.kicker} title={<TwoTone {...data.headline} />} lede={data.lede}>
+        {data.image ? (
+          <figure className="page-photo">
+            <Image
+              src={data.image.src}
+              alt={data.image.alt}
+              width={data.image.width}
+              height={data.image.height}
+              sizes="(min-width: 72rem) 72rem, 100vw"
+              priority
+            />
+            <figcaption>{data.image.caption}</figcaption>
+          </figure>
+        ) : null}
+      </PageHead>
 
       <Section id="cover" title={data.coverTitle}>
         <CoverList items={data.cover} />
