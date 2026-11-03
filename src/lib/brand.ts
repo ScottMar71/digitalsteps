@@ -5,7 +5,7 @@ export const BRAND_LOGO: LogoVariant = "tile";
 
 export const BRAND = {
   name: "Digital Steps",
-  strapline: "Technology made simple. Confidence built step by step.",
+  strapline: "Beautiful websites. Brilliant branding. Straightforward support.",
   colours: {
     paper: "#F6F3EC",
     paper2: "#EDE9DF",

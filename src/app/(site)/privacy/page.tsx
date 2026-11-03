@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHead } from "@/components/sections";
+import { PageHead } from "@/components/prose-page";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
 
           <h2>Who we are</h2>
           <p>
-            {site.name} is the trading name of {site.owner}, a teaching-led IT and digital services business based in{" "}
+            {site.name} is the trading name of {site.owner}, a website design, branding and hosting studio based in{" "}
             {site.area}. We are the data
             controller for the information described here. You can contact us about anything in this policy at{" "}
             <a href={`mailto:${site.email}`}>{site.email}</a>.

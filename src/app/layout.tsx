@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Sans } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import "./site.css";
 import { site } from "@/content/site";
@@ -7,7 +7,14 @@ import { site } from "@/content/site";
 const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={instrumentSans.variable}>
+    <html lang="en-GB" className={`${instrumentSans.variable} ${instrumentSerif.variable}`}>
       <body>{children}</body>
     </html>
   );

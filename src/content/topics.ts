@@ -1,9 +1,9 @@
 export const topics = [
-  { value: "learning", label: "One-to-one tuition or digital skills" },
-  { value: "business", label: "Business or workplace training" },
-  { value: "websites", label: "A website" },
-  { value: "apps", label: "An app, automation or digital tool" },
-  { value: "support", label: "Small business IT support" },
+  { value: "website", label: "A new website" },
+  { value: "redesign", label: "A website redesign" },
+  { value: "branding", label: "Branding" },
+  { value: "hosting", label: "Hosting and support" },
+  { value: "community", label: "A community project" },
   { value: "other", label: "Something else" },
 ] as const;
 

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { PageHead } from "@/components/sections";
+import { PageHead } from "@/components/prose-page";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Terms and conditions",
-  description: "The terms on which Digital Steps provides tuition, training, websites, apps and support: payments, cancellations and responsibilities.",
+  description: "The terms on which Digital Steps provides websites, branding, hosting and support: payments, cancellations and responsibilities.",
   alternates: { canonical: "/terms" },
 };
 

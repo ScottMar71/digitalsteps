@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHead } from "@/components/sections";
+import { PageHead } from "@/components/prose-page";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ const updated = "12 October 2026";
 export default function CookiesPage() {
   return (
     <>
-      <PageHead kicker="Cookie policy" title="This site does not track you." lede="We think a website for nervous beginners should not open with a banner. So we built one that does not need to." />
+      <PageHead kicker="Cookie policy" title="This site does not track you." lede="There is no tracking banner because there is nothing to consent to. The site does not follow you around the internet." />
       <section className="section">
         <div className="narrow prose">
           <p className="updated">Last updated {updated}</p>

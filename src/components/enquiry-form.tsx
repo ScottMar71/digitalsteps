@@ -66,7 +66,7 @@ export function EnquiryForm({ defaultTopic = "" }: { defaultTopic?: string }) {
         <label htmlFor="message">Tell us a little about it (optional)</label>
         <textarea id="message" name="message" className="input" defaultValue={v.message} aria-describedby="message-hint" />
         <span id="message-hint" className="hint">
-          A sentence is plenty. For example: &ldquo;I would like help with email on my iPad&rdquo; or &ldquo;We are a team of eight and nobody uses Teams.&rdquo;
+          A sentence is plenty. For example: &ldquo;We run a cafe and need a simple site with the menu and a way to book.&rdquo;
         </span>
       </div>
 
@@ -83,7 +83,7 @@ export function EnquiryForm({ defaultTopic = "" }: { defaultTopic?: string }) {
 
       <div className="actions" style={{ marginTop: 0 }}>
         <button type="submit" className="button" disabled={pending}>
-          {pending ? "Sending…" : "Send message"}
+          {pending ? "Sending…" : "Start your project"}
         </button>
       </div>
     </form>

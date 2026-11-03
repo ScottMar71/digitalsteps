@@ -1,98 +1,77 @@
 /**
- * TODO (Scott): every figure below is a placeholder written as £[XX].
- * Replace with real "from" prices. Pages render whatever is here verbatim.
+ * Packages. To publish a price, set `from` to a string such as "£950".
+ * An empty `from` renders as "Guide price on request".
  */
 export type Package = {
+  id: string;
   name: string;
   who: string;
   includes: string[];
   from: string;
   note?: string;
+  featured?: boolean;
 };
 
-export type PriceGroup = {
-  id: "learning" | "business" | "solutions";
-  title: string;
-  intro: string;
-  packages: Package[];
-};
-
-export const priceGroups: PriceGroup[] = [
+export const packages: Package[] = [
   {
-    id: "learning",
-    title: "Learning",
-    intro: "One-to-one tuition for individuals. Prices are per session, at your home, online or at a venue we arrange.",
-    packages: [
-      {
-        name: "Single session",
-        who: "Try it, or fix one specific thing.",
-        includes: ["60 minutes, one to one", "On your own device", "Plain notes afterwards"],
-        from: "£[XX]",
-      },
-      {
-        name: "Confidence block",
-        who: "Most people start here.",
-        includes: ["Four 60-minute sessions", "A simple plan for what we will cover", "Email questions between sessions"],
-        from: "£[XXX]",
-        note: "Saves against four single sessions.",
-      },
-      {
-        name: "Steady steps",
-        who: "Ongoing, unhurried support.",
-        includes: ["Two sessions a month", "Priority booking", "Help by phone when something urgent comes up"],
-        from: "£[XX] a month",
-      },
-    ],
+    id: "landing",
+    name: "Landing page",
+    who: "One clear offer. One strong page.",
+    includes: ["A single bespoke page", "Mobile layout", "A straightforward way to enquire", "Launch and a short handover"],
+    from: "",
   },
   {
     id: "business",
-    title: "Business",
-    intro: "Training for teams and organisations. Guide prices for up to twelve people; larger groups and series are quoted.",
-    packages: [
-      {
-        name: "Half-day workshop",
-        who: "One topic, done properly.",
-        includes: ["Three hours, on site or online", "Built around your tools and examples", "Plain-English guide for attendees"],
-        from: "£[XXX]",
-      },
-      {
-        name: "Training series",
-        who: "Change how a team works.",
-        includes: ["Three to six sessions over a quarter", "Discovery call and tailored plan", "Follow-up session and Q&A"],
-        from: "£[XXXX]",
-      },
-      {
-        name: "Manager one-to-one",
-        who: "Private sessions for owners and leads.",
-        includes: ["90 minutes, one to one", "Your questions, in confidence", "Notes and next steps"],
-        from: "£[XXX]",
-      },
-    ],
+    name: "Business website",
+    who: "The usual starting point for a small business.",
+    includes: ["Up to five pages, designed around you", "Help shaping the words", "The six standards below", "Handover and 30 days of tweaks"],
+    from: "",
+    featured: true,
   },
   {
-    id: "solutions",
-    title: "Solutions",
-    intro: "Websites, apps, automation and support. Every project gets a written plan and a fixed guide price before it starts.",
-    packages: [
-      {
-        name: "Simple business website",
-        who: "Up to five pages, built to be run by you.",
-        includes: ["Mobile-first design in your branding", "Content help and local search basics", "Handover session and 30 days of tweaks"],
-        from: "£[XXX]",
-      },
-      {
-        name: "Prototype or web app",
-        who: "Test an idea or replace a spreadsheet.",
-        includes: ["Scoped first version in weeks, not months", "You own the code and accounts", "Documentation and a training session"],
-        from: "£[XXXX]",
-      },
-      {
-        name: "Care plan and IT support",
-        who: "A named person to call.",
-        includes: ["Updates, backups and small changes", "Microsoft 365 admin and security basics", "Response within one working day"],
-        from: "£[XX] a month",
-        note: "Month to month. Ad hoc help by the hour.",
-      },
-    ],
+    id: "brand",
+    name: "Brand and website",
+    who: "A recognisable identity, and the site that carries it.",
+    includes: ["Logo, colours and type", "A website in that identity", "A small set of social graphics", "Guidance so it stays consistent"],
+    from: "",
+  },
+  {
+    id: "care",
+    name: "Hosting and care",
+    who: "After launch, a person who looks after it.",
+    includes: ["Secure hosting and backups", "SSL, domain and email forwarding", "Content updates when you need them", "Replies in plain English"],
+    from: "",
+    note: "Monthly. You can leave when you want.",
   },
 ];
+
+export const inclusions = [
+  {
+    title: "Bespoke design",
+    body: "A website designed specifically for your business. Not a template with your logo dropped in.",
+  },
+  {
+    title: "Fully responsive",
+    body: "Looks considered on desktops, tablets and phones, because that is where your customers are.",
+  },
+  {
+    title: "SSL security",
+    body: "Secure browsing with SSL, so the address bar shows people they are in the right place.",
+  },
+  {
+    title: "Social integration",
+    body: "Connections to the social platforms you actually use, without making the site dependent on them.",
+  },
+  {
+    title: "Domain name",
+    body: "Your own professional domain, so the business is easy to find and easy to trust.",
+  },
+  {
+    title: "Email forwarding",
+    body: "Professional email forwarding, so enquiries reach a person rather than a forgotten inbox.",
+  },
+] as const;
+
+export function priceLabel(from: string) {
+  return from ? `From ${from}` : "Guide price on request";
+}

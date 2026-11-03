@@ -66,9 +66,22 @@ export function LogoMark({ variant, mood = "steady", className, title = "Digital
 }
 
 /** Mark plus wordmark. Wordmark is real text so it always uses the brand font. */
-export function Logo({ variant, className }: { variant: LogoVariant; className?: string }) {
+export function Logo({
+  variant,
+  className,
+  tone = "ink",
+}: {
+  variant: LogoVariant;
+  className?: string;
+  tone?: "ink" | "paper";
+}) {
+  const color = tone === "paper" ? "var(--paper)" : ink;
+  const steps = tone === "paper" ? ink : paper;
   return (
-    <span className={["logo", `logo-${variant}`, className].filter(Boolean).join(" ")} style={{ color: ink }}>
+    <span
+      className={["logo", `logo-${variant}`, className].filter(Boolean).join(" ")}
+      style={{ color, ["--logo-steps" as string]: steps }}
+    >
       <LogoMark variant={variant} className="logo-mark" />
       <span className="logo-word" aria-hidden="true">
         {variant === "stack" ? (

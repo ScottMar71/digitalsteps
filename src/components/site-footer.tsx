@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand-logo";
 import { BRAND_LOGO } from "@/lib/brand";
-import { footerLinks, nav, site } from "@/content/site";
+import { footerLinks, footerServices, site } from "@/content/site";
 
 export function SiteFooter() {
   return (
@@ -9,38 +9,45 @@ export function SiteFooter() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Logo variant={BRAND_LOGO} />
-            <p>{site.strapline}</p>
+            <Logo variant={BRAND_LOGO} tone="paper" />
+            <p>{site.proposition}</p>
             <p>
-              {site.areaDetail} <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <br />
+              {site.area}
             </p>
           </div>
           <nav aria-label="Services">
-            <h2>Explore</h2>
+            <h2>Services</h2>
             <ul>
-              {nav.map((item) => (
+              {footerServices.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
             </ul>
           </nav>
-          <nav aria-label="More">
-            <h2>More</h2>
+          <nav aria-label="Studio">
+            <h2>Studio</h2>
             <ul>
               {footerLinks.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
+              <li>
+                <a href={site.linkedin} rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
         <div className="footer-bottom">
           <span>
-            {site.name} · {site.area}
+            {site.name} · {site.areaShort}
           </span>
-          <span>Taught, not just built.</span>
+          <span>No templates. No shortcuts.</span>
         </div>
       </div>
     </footer>
