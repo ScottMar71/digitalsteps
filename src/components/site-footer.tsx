@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="footer-grid">
           <div>
             <Logo variant={BRAND_LOGO} tone="paper" />
-            <p>{site.proposition}</p>
+            <p className="footer-lead">{site.proposition}</p>
             <p>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <br />

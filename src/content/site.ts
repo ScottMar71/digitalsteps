@@ -22,12 +22,15 @@ export const site = {
   },
 } as const;
 
+export const serviceNav = [
+  { href: "/web-design", label: "Web design", note: "Sites designed around the business" },
+  { href: "/branding", label: "Branding", note: "Logo, colour and type" },
+  { href: "/hosting", label: "Hosting and support", note: "Care after launch" },
+  { href: "/community", label: "Community", note: "Clubs, charities and independents" },
+] as const;
+
 export const nav = [
   { href: "/work", label: "Work" },
-  { href: "/web-design", label: "Web design" },
-  { href: "/branding", label: "Branding" },
-  { href: "/hosting", label: "Hosting" },
-  { href: "/community", label: "Community" },
   { href: "/pricing", label: "Packages" },
   { href: "/about", label: "About" },
 ] as const;

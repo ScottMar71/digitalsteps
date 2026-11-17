@@ -45,7 +45,7 @@ export default function BrandPage() {
           Three logos. <em>Pick one.</em>
         </h1>
         <p className="lede">
-          Everything here is built from the same tokens as the live site. Currently showing <strong>{OPTIONS.find((o) => o.id === BRAND_LOGO)?.name}</strong> on the coming-soon page.
+          Everything here is built from the same tokens as the live site. Currently showing <strong>{OPTIONS.find((o) => o.id === BRAND_LOGO)?.name}</strong> across the website.
         </p>
       </header>
 

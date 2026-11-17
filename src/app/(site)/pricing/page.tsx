@@ -31,7 +31,7 @@ export default function PricingPage() {
         <div className="container">
           <div className="package-grid">
             {main.map((item) => (
-              <article key={item.id} className={item.featured ? "package is-featured" : "package"}>
+              <article key={item.id} className={item.featured ? "package is-featured" : "package"} data-reveal="">
                 <h3>{item.name}</h3>
                 <p>{item.who}</p>
                 <p className="price">{priceLabel(item.from)}</p>
@@ -40,7 +40,7 @@ export default function PricingPage() {
                     <li key={line}>{line}</li>
                   ))}
                 </ul>
-                <Link className="button" href="/contact?topic=website">
+                <Link className="button" href={item.id === "brand" ? "/contact?topic=branding" : "/contact?topic=website"}>
                   Ask for this
                 </Link>
               </article>

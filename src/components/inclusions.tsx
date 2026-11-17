@@ -41,7 +41,7 @@ export function Inclusions({ heading = "Every package includes" }: { heading?: s
         </div>
         <ul className="inclusion-grid">
           {inclusions.map((item, index) => (
-            <li key={item.title} className="reveal">
+            <li key={item.title} data-reveal="">
               <span className="inclusion-mark">{marks[index]}</span>
               <h3>{item.title}</h3>
               <p>{item.body}</p>

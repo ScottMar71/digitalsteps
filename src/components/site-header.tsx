@@ -9,9 +9,9 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="container header-row">
         <Link href="/" className="header-logo" aria-label="Digital Steps home">
-          <Logo variant={BRAND_LOGO} tone="paper" />
+          <Logo variant={BRAND_LOGO} />
         </Link>
-        <NavLinks items={nav} className="nav-desktop" />
+        <NavLinks />
         <MobileNav items={nav} />
       </div>
     </header>

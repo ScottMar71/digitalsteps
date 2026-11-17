@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
 import { Device } from "@/components/device";
 import { Inclusions } from "@/components/inclusions";
+import { projectSteps } from "@/content/services";
 
 export const metadata: Metadata = {
   title: "Web design",
@@ -19,13 +20,6 @@ const kinds = [
   ["Landing pages", "One idea, one action, and nothing else competing with it."],
   ["Website redesigns", "Keep the parts people already trust. Replace the parts that make the business look smaller than it is."],
   ["Custom functionality", "Booking notes, membership details, a planner, a dashboard. Built because the business needs it."],
-];
-
-const steps = [
-  ["01", "Listen", "What the business does, who it is for, and what the site has to make easier."],
-  ["02", "Shape", "Structure, words and a direction before anything is decorated."],
-  ["03", "Design", "A site that could only belong to this business. Desktop and phone, together."],
-  ["04", "Hand over", "Launch, a walkthrough, and thirty days to adjust the things real use reveals."],
 ];
 
 export default function WebDesignPage() {
@@ -80,8 +74,8 @@ export default function WebDesignPage() {
             <h2>Four steps. No mystery phase in the middle.</h2>
           </div>
           <div className="process">
-            {steps.map(([n, title, body]) => (
-              <article key={n}>
+            {projectSteps.map(([n, title, body]) => (
+              <article key={n} data-reveal="">
                 <span>{n}</span>
                 <h3>{title}</h3>
                 <p>{body}</p>

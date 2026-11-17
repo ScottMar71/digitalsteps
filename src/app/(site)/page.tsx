@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { CtaBand } from "@/components/cta-band";
-import { Device } from "@/components/device";
+import { HeroStudio, type StudioItem } from "@/components/hero-studio";
 import { Inclusions } from "@/components/inclusions";
 import { WorkCard } from "@/components/work-card";
-import { reasons, services } from "@/content/services";
+import { projectSteps, reasons, services } from "@/content/services";
 import { site } from "@/content/site";
-import { testimonials } from "@/content/testimonials";
-import { homeWork } from "@/content/work";
+import { caseStudy, homeWork } from "@/content/work";
 
 export const metadata: Metadata = {
   title: { absolute: "Digital Steps · Websites, branding and hosting" },
@@ -16,15 +14,23 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const ticker = [
-  "Web design",
-  "Branding",
-  "Hosting",
-  "Support",
-  "Community projects",
-  "Affordable websites",
-  "Norfolk & Suffolk",
-];
+const studioSlugs = ["norfolk-run-collective", "runpilot", "runpattern"] as const;
+
+const studio: StudioItem[] = studioSlugs.flatMap((slug) => {
+  const item = caseStudy(slug);
+  if (!item?.image) return [];
+  return [
+    {
+      slug: item.slug,
+      name: item.name,
+      industry: item.industry,
+      statusLabel: item.statusLabel,
+      summary: item.summary,
+      src: item.image.src,
+      alt: item.image.alt,
+    },
+  ];
+});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -43,7 +49,6 @@ const jsonLd = {
 
 export default function HomePage() {
   const projects = homeWork();
-  const [lead, ...rest] = projects;
 
   return (
     <>
@@ -51,10 +56,14 @@ export default function HomePage() {
 
       <section className="hero">
         <div className="container hero-grid">
-          <div>
+          <div className="hero-copy">
             <p className="eyebrow">{site.areaShort} · Design studio</p>
             <h1>
-              Your website. Your brand. <em>Your next big step.</em>
+              <span>Your website.</span>
+              <span>Your brand.</span>
+              <span>
+                <em>Your next big step.</em>
+              </span>
             </h1>
             <p className="lede">
               Creative, bespoke websites for businesses with big ideas. Designed from scratch, built around you and priced for real-world budgets.
@@ -67,90 +76,67 @@ export default function HomePage() {
                 Explore Our Work
               </Link>
             </div>
+            <ul className="hero-facts">
+              <li>Bespoke, never a template</li>
+              <li>Reply within {site.responseTime}</li>
+              <li>One person, start to finish</li>
+            </ul>
           </div>
-
-          <div className="hero-stage">
-            <div className="hero-laptop">
-              <Device
-                kind="laptop"
-                src="/work/own-your-time.jpg"
-                alt="A product website design example, Own Your Time, shown on a laptop."
-                preload
-                sizes="(max-width: 800px) 92vw, 620px"
-              />
-            </div>
-            <div className="hero-phone">
-              <Device
-                kind="phone"
-                src="/work/norfolk-run-collective.jpg"
-                alt="The Norfolk Run Collective website shown on a phone."
-                sizes="180px"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="marquee" aria-hidden="true">
-          <div className="marquee-track">
-            {[...ticker, ...ticker].map((item, index) => (
-              <span key={`${item}-${index}`}>{item}</span>
-            ))}
-          </div>
+          <HeroStudio items={studio} />
         </div>
       </section>
 
-      <div className="sheet">
-        <section className="section" id="work">
-          <div className="container">
-            <div className="section-head">
+      <section className="section" id="work">
+        <div className="container">
+          <div className="section-head section-head-row">
+            <div>
               <p className="eyebrow">Selected work</p>
               <h2>Sites with a point of view.</h2>
               <p className="section-lede">
                 Live projects sit beside design examples and concept studies. Each label says which is which.
               </p>
             </div>
-            <div className="work-grid">
-              {lead ? <WorkCard item={lead} large preload /> : null}
-              {rest.map((item) => (
-                <WorkCard key={item.slug} item={item} frame={item.slug === "own-your-time" ? "laptop" : "browser"} />
-              ))}
-            </div>
-            <div className="actions">
-              <Link className="button" href="/work">
-                See the full studio
-              </Link>
-            </div>
+            <Link className="text-link" href="/work">
+              All projects <span aria-hidden="true">→</span>
+            </Link>
           </div>
-        </section>
+          <div className="work-grid">
+            {projects.map((item, index) => (
+              <WorkCard
+                key={item.slug}
+                item={item}
+                preload={index === 0}
+                frame={item.slug === "own-your-time" ? "laptop" : "browser"}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
-        <section className="section" style={{ paddingTop: 0 }}>
-          <div className="container">
-            <div className="section-head">
-              <p className="eyebrow">What we do</p>
-              <h2>Six ways we help a business show up properly.</h2>
-            </div>
-            <div className="service-bento">
-              {services.map((service) => (
-                <Link key={service.title} href={service.href} className={`service-card panel-${service.panel}${service.image ? " has-photo" : ""}`}>
-                  {service.image ? (
-                    <Image src={service.image} alt="" fill sizes="(max-width: 800px) 100vw, 40vw" style={{ objectFit: "cover" }} />
-                  ) : null}
-                  <p className="eyebrow">{service.kicker}</p>
-                  <h3>{service.title}</h3>
-                  <p>{service.body}</p>
-                  {service.href === "/web-design" ? (
-                    <ul>
-                      {service.points.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </Link>
-              ))}
-            </div>
+      <section className="section" id="services" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="section-head">
+            <p className="eyebrow">What we do</p>
+            <h2>Six ways we help a business show up properly.</h2>
           </div>
-        </section>
-      </div>
+          <ul className="service-rows">
+            {services.map((service) => (
+              <li key={service.title} data-reveal="">
+                <Link href={service.href}>
+                  <span className="service-index">{service.kicker}</span>
+                  <span className="service-copy">
+                    <h3>{service.title}</h3>
+                    <p>{service.body}</p>
+                  </span>
+                  <span className="service-go" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       <section className="usp">
         <div className="container usp-grid">
@@ -162,7 +148,7 @@ export default function HomePage() {
               <span className="quiet">Just websites built around you.</span>
             </h2>
           </div>
-          <p className="reveal">
+          <p data-reveal="">
             There&apos;s no use of templates here. We build exactly what you need, as you need it. Every website is designed around your business, your brand and your customers. No cookie-cutter designs. No unnecessary extras. Just a professional website that works for you.
           </p>
         </div>
@@ -181,7 +167,7 @@ export default function HomePage() {
           </div>
           <ul className="reason-list">
             {reasons.map((reason) => (
-              <li key={reason.title} className="reveal">
+              <li key={reason.title} data-reveal="">
                 <h3>{reason.title}</h3>
                 <p>{reason.body}</p>
               </li>
@@ -195,41 +181,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Inclusions />
-
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
-            <p className="eyebrow">Testimonials</p>
-            <h2>What it should feel like to work with us.</h2>
+            <p className="eyebrow">How a project runs</p>
+            <h2>Four steps. No mystery phase in the middle.</h2>
           </div>
-          <p className="sample-banner">Sample testimonial — replace with genuine customer feedback. These quotes are fictional and are not from clients.</p>
-          <div className="quote-grid">
-            {testimonials.map((item) => (
-              <blockquote className="quote" key={item.name}>
-                <span className="sample-tag">Sample testimonial</span>
-                <p>{item.quote}</p>
-                <footer>
-                  <strong>{item.name}</strong>
-                  <br />
-                  {item.context}
-                </footer>
-              </blockquote>
+          <div className="process">
+            {projectSteps.map(([n, title, body]) => (
+              <article key={n} data-reveal="">
+                <span>{n}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }} aria-labelledby="awards-heading">
-        <div className="container">
-          <div className="award">
-            <p className="eyebrow">Design placeholder</p>
-            <h2 id="awards-heading">Customer Service Recognition</h2>
-            <p>Award showcase coming soon. Nothing here is a claim of an award, badge or accreditation.</p>
-          </div>
-        </div>
-      </section>
-
+      <Inclusions />
       <CtaBand />
     </>
   );

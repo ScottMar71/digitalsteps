@@ -16,7 +16,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
 
   return (
     <>
-      <header className="page-hero">
+      <header className="page-hero page-hero-compact">
         <div className="container">
           <p className="eyebrow">Contact</p>
           <h1>Tell us what you need.</h1>
