@@ -53,7 +53,7 @@ export default function BrandingPage() {
           </div>
           <div className="inclusion-grid">
             {pieces.map(([title, body]) => (
-              <article key={title} className="reveal" style={{ background: "var(--paper-2)", borderRadius: "1.1rem", padding: "1.2rem" }}>
+              <article key={title} className="info-card" data-reveal="">
                 <h3>{title}</h3>
                 <p>{body}</p>
               </article>

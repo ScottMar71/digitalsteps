@@ -62,6 +62,13 @@ export const services: StudioService[] = [
   },
 ];
 
+export const projectSteps = [
+  ["01", "Listen", "What the business does, who it is for, and what the site has to make easier."],
+  ["02", "Shape", "Structure, words and a direction before anything is decorated."],
+  ["03", "Design", "A site that could only belong to this business. Desktop and phone, together."],
+  ["04", "Hand over", "Launch, a walkthrough, and thirty days to adjust the things real use reveals."],
+] as const;
+
 export const reasons = [
   { title: "Bespoke, never a template", body: "Every site is designed around the business in front of us. There is no house layout we drop people into." },
   { title: "Prices you can see", body: "Packages are plain, and the figure is confirmed in writing before work starts. Affordable means excellent value." },
