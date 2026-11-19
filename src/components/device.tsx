@@ -8,6 +8,7 @@ export function Device({
   alt,
   concept,
   preload = false,
+  unoptimized = false,
   sizes = "(max-width: 800px) 92vw, 640px",
 }: {
   kind?: "laptop" | "phone" | "browser";
@@ -15,6 +16,7 @@ export function Device({
   alt: string;
   concept?: ConceptVariant;
   preload?: boolean;
+  unoptimized?: boolean;
   sizes?: string;
 }) {
   return (
@@ -29,7 +31,7 @@ export function Device({
       <div className={kind === "laptop" ? "device-bezel" : undefined}>
         <div className="device-screen">
           {src ? (
-            <Image src={src} alt={alt} fill sizes={sizes} preload={preload} style={{ objectFit: "cover", objectPosition: "top center" }} />
+            <Image src={src} alt={alt} fill sizes={sizes} preload={preload} unoptimized={unoptimized} style={{ objectFit: "cover", objectPosition: "top center" }} />
           ) : concept ? (
             <ConceptSite variant={concept} />
           ) : null}

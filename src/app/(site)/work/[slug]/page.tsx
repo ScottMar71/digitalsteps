@@ -62,10 +62,27 @@ export default async function CaseStudyPage({ params }: Params) {
         </div>
       </header>
 
-      <div className="container case-hero">
+      <div className={`container case-hero${item.presentation === "page" ? " case-hero-page" : ""}`}>
         <ViewTransition name={`work-${item.slug}`} share="morph" default="none">
           <div className={`work-frame panel-${item.panel}`} style={{ borderRadius: "1.2rem", paddingBottom: "1.1rem" }}>
-            {item.presentation === "photo" && item.image ? (
+            {item.presentation === "page" && item.image?.width && item.image.height ? (
+              <div className="device device-browser device-page">
+                <div className="browser-chrome" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                </div>
+                <Image
+                  className="device-page-shot"
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  width={item.image.width}
+                  height={item.image.height}
+                  unoptimized
+                  style={{ width: "100%", height: "auto" }}
+                />
+              </div>
+            ) : item.presentation === "photo" && item.image ? (
               <div className="work-photo">
                 <Image src={item.image.src} alt={item.image.alt} fill sizes="(max-width: 800px) 100vw, 1100px" style={{ objectFit: "cover" }} />
               </div>
@@ -81,6 +98,16 @@ export default async function CaseStudyPage({ params }: Params) {
           </div>
         </ViewTransition>
       </div>
+
+      {item.welcome ? (
+        <div className="container case-welcome">
+          <h2>{item.welcome.heading}</h2>
+          {item.welcome.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p className="case-welcome-close">{item.welcome.close}</p>
+        </div>
+      ) : null}
 
       <div className="container case-layout" style={{ paddingTop: "2.5rem" }}>
         <div className="case-copy" style={{ paddingTop: 0 }}>

@@ -38,7 +38,14 @@ export function WorkCard({
                   alt=""
                   concept={item.concept}
                   preload={preload}
-                  sizes={large ? "(max-width: 800px) 100vw, 70vw" : "(max-width: 800px) 100vw, 40vw"}
+                  unoptimized={item.presentation === "page"}
+                  sizes={
+                    item.presentation === "page" && item.image?.width
+                      ? `${item.image.width}px`
+                      : large
+                        ? "(max-width: 800px) 100vw, 70vw"
+                        : "(max-width: 800px) 100vw, 40vw"
+                  }
                 />
               )}
             </div>

@@ -6,7 +6,7 @@ import { workByStatus, type WorkStatus } from "@/content/work";
 export const metadata: Metadata = {
   title: "Our work",
   description:
-    "Live websites and products from Digital Steps, including Norfolk Run Collective, RunPilot and RunPattern.",
+    "Live websites from Digital Steps, including Norfolk Run Collective, RunPilot and RunPattern, and The Willow Boutique, a design example of an online shop.",
   alternates: { canonical: "/work" },
 };
 
@@ -36,7 +36,7 @@ export default function WorkPage() {
           <p className="eyebrow">Our work</p>
           <h1>Different businesses. Completely different sites.</h1>
           <p className="lede">
-            Norfolk Run Collective, RunPilot and RunPattern. Three live projects, each built for a different job.
+            Norfolk Run Collective, RunPilot and RunPattern are live. The Willow Boutique is a design example of a complete online shop.
           </p>
         </div>
       </header>
@@ -46,7 +46,7 @@ export default function WorkPage() {
           {groups
             .filter((group) => workByStatus(group.status).length > 0)
             .map((group) => (
-            <div key={group.status}>
+            <div className="work-group" key={group.status}>
               <div className="group-label">
                 <h2>{group.title}</h2>
                 <p>{group.note}</p>

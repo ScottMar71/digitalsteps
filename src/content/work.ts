@@ -11,13 +11,14 @@ export type WorkItem = {
   story: string;
   did: string[];
   outcome?: string;
+  welcome?: { heading: string; body: string[]; close: string };
   status: WorkStatus;
   statusLabel: string;
   honesty: string;
   services: string[];
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; width?: number; height?: number };
   /** Photos that already contain a device should not be framed inside a second one. */
-  presentation: "screen" | "photo";
+  presentation: "screen" | "photo" | "page";
   concept?: ConceptVariant;
   url?: string;
   panel: Panel;
@@ -106,6 +107,45 @@ export const work: WorkItem[] = [
     presentation: "screen",
     url: "https://www.runpattern.co.uk",
     panel: "dusk",
+  },
+  {
+    slug: "the-willow-boutique",
+    name: "The Willow Boutique",
+    title: "A complete online shop, ready to browse and buy",
+    industry: "E-commerce & online shops",
+    summary:
+      "A homepage for a fashion boutique: its own branding, categories, priced products, a sale, and the reassurances a shopper needs before they buy.",
+    story:
+      "A boutique site has to do more than introduce the business. Someone arriving should be able to find a category, see a price, and trust delivery, returns and checkout without hunting for them.",
+    did: [
+      "Boutique branding and a shop navigation: Home, Shop, About, Journal and Contact.",
+      "A large lifestyle hero, then shop by category.",
+      "A featured collection with prices, and a sale that sits inside the page.",
+      "Delivery, returns and secure checkout, stated where someone is deciding.",
+      "A newsletter, and a footer for customer service.",
+    ],
+    outcome:
+      "The page shows a complete shopping experience: find something, see the price, and know how buying works. It is a design example, not a live shop.",
+    welcome: {
+      heading: "Welcome to The Willow Boutique",
+      body: [
+        "The Willow Boutique is a contemporary fashion destination offering timeless style, carefully selected collections and effortless everyday elegance. From beautifully tailored clothing to statement accessories, we bring together quality, style and affordability to help you look and feel your best.",
+        "Discover pieces you'll love, enjoy a shopping experience designed around you, and find your own sense of style with The Willow Boutique.",
+      ],
+      close: "Fashion. Elegance. Confidence. You.",
+    },
+    status: "example",
+    statusLabel: "Design example",
+    honesty: "Made to show an online shop. The Willow Boutique is not a client, and this site is not live.",
+    services: ["Web design", "E-commerce"],
+    image: {
+      src: "/work/the-willow-boutique.jpg",
+      alt: "The Willow Boutique homepage. A fashion shop with a lifestyle hero, categories, and a featured collection with prices.",
+      width: 682,
+      height: 1024,
+    },
+    presentation: "page",
+    panel: "sand",
   },
 ];
 
