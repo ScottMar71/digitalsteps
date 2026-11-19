@@ -228,16 +228,18 @@ export function ShowpieceHome({ projects }: { projects: ShowProject[] }) {
                 <span className="live-dot" />
                 Live · {project.name}
               </p>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
+            </div>
+            <div className="switch">
+              <div className="switch-options" role="group" aria-label="Choose a live site">
+                {projects.map((item) => (
+                  <button key={item.slug} type="button" aria-pressed={item.slug === project.slug} onClick={() => onPick(item.slug)}>
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+              <a className="switch-open" href={project.url} target="_blank" rel="noopener noreferrer">
                 Open the site
               </a>
-            </div>
-            <div className="switch" role="group" aria-label="Choose a live site">
-              {projects.map((item) => (
-                <button key={item.slug} type="button" aria-pressed={item.slug === project.slug} onClick={() => onPick(item.slug)}>
-                  {item.name}
-                </button>
-              ))}
             </div>
           </div>
         </div>

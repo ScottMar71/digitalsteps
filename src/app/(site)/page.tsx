@@ -13,6 +13,7 @@ const featured = ["norfolk-run-collective", "runpattern"];
 
 const phoneShots: Record<string, string> = {
   "norfolk-run-collective": "/work/norfolk-run-collective-phone.jpg",
+  runpattern: "/work/runpattern-phone.jpg",
 };
 
 const jsonLd = {

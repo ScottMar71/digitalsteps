@@ -45,6 +45,9 @@ export function SiteFooter() {
           <span>
             {site.name} · {site.areaShort}
           </span>
+          <Link className="footer-quiet" href="/vision">
+            Our vision
+          </Link>
           <span>No templates. No shortcuts.</span>
         </div>
       </div>
