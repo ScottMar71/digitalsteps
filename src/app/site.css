@@ -983,9 +983,16 @@ h3 {
 }
 
 .footer-lead {
-  max-width: 22rem;
+  max-width: 28rem;
   margin: 1rem 0;
   color: rgba(246, 243, 236, 0.8);
+}
+
+.footer-lead strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--paper);
+  font-weight: 700;
 }
 
 .footer-grid {

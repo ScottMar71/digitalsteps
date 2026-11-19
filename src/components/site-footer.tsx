@@ -10,7 +10,10 @@ export function SiteFooter() {
         <div className="footer-grid">
           <div>
             <Logo variant={BRAND_LOGO} tone="paper" />
-            <p className="footer-lead">{site.proposition}</p>
+            <p className="footer-lead">
+              <strong>{site.proposition}</strong>
+              {site.propositionDetail}
+            </p>
             <p>
               <a href={`mailto:${site.email}`}>{site.email}</a>
               <br />
@@ -35,11 +38,6 @@ export function SiteFooter() {
                   <Link href={item.href}>{item.label}</Link>
                 </li>
               ))}
-              <li>
-                <a href={site.linkedin} rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </li>
             </ul>
           </nav>
         </div>

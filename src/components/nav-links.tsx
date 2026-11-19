@@ -8,6 +8,7 @@ import { nav, serviceNav } from "@/content/site";
 type Item = { href: string; label: string };
 
 function isCurrent(path: string, href: string) {
+  if (href === "/") return path === "/";
   return path === href || path.startsWith(`${href}/`);
 }
 
@@ -161,6 +162,9 @@ export function MobileNav({ items }: { items: readonly Item[] }) {
       {open ? (
         <div ref={sheetRef} id={menuId} className="nav-sheet" role="dialog" aria-modal="true" aria-label="Menu">
           <nav aria-label="Primary">
+            <Link href="/" aria-current={isCurrent(path, "/") ? "page" : undefined}>
+              Home
+            </Link>
             <Link href="/work" aria-current={isCurrent(path, "/work") ? "page" : undefined}>
               Work
             </Link>
@@ -171,7 +175,7 @@ export function MobileNav({ items }: { items: readonly Item[] }) {
               </Link>
             ))}
             {items
-              .filter((item) => item.href !== "/work")
+              .filter((item) => item.href !== "/" && item.href !== "/work")
               .map((item) => (
                 <Link key={item.href} href={item.href} aria-current={isCurrent(path, item.href) ? "page" : undefined}>
                   {item.label}

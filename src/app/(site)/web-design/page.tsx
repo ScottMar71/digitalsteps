@@ -59,8 +59,8 @@ export default function WebDesignPage() {
           <div className="sticky-visual">
             <Device
               kind="laptop"
-              src="/work/own-your-time.jpg"
-              alt="Design example of a product website on a laptop."
+              src="/work/norfolk-run-collective.jpg"
+              alt="Norfolk Run Collective homepage on a laptop."
               sizes="(max-width: 800px) 100vw, 540px"
             />
           </div>

@@ -5,7 +5,6 @@ import { work } from "@/content/work";
 const routes = [
   "",
   "/web-design",
-  "/branding",
   "/hosting",
   "/work",
   "/community",

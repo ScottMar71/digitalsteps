@@ -6,7 +6,9 @@ export const site = {
   owner: "Scott Maryan",
   url: "https://digital-steps.co.uk",
   strapline: "Beautiful websites. Brilliant branding. Straightforward support.",
-  proposition: "Beautiful websites. Brilliant branding. Straightforward support. Affordable prices.",
+  proposition: "Smarter Digital. Stronger Businesses.",
+  propositionDetail:
+    "Beautiful websites, intelligent applications and AI-powered solutions. Everything you need to build, innovate and grow your business.",
   description:
     "Digital Steps is a website design, branding and hosting studio in Norfolk and Suffolk. Bespoke websites for small businesses, independents, start-ups and community organisations, at sensible prices.",
   email: "support@digital-steps.co.uk",
@@ -24,12 +26,12 @@ export const site = {
 
 export const serviceNav = [
   { href: "/web-design", label: "Web design", note: "Sites designed around the business" },
-  { href: "/branding", label: "Branding", note: "Logo, colour and type" },
   { href: "/hosting", label: "Hosting and support", note: "Care after launch" },
   { href: "/community", label: "Community", note: "Clubs, charities and independents" },
 ] as const;
 
 export const nav = [
+  { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
   { href: "/pricing", label: "Packages" },
   { href: "/about", label: "About" },
@@ -37,7 +39,6 @@ export const nav = [
 
 export const footerServices = [
   { href: "/web-design", label: "Web design" },
-  { href: "/branding", label: "Branding" },
   { href: "/hosting", label: "Hosting & support" },
   { href: "/community", label: "Community projects" },
   { href: "/pricing", label: "Packages & pricing" },

@@ -30,7 +30,6 @@ const capabilities: { title: string; body: string; href?: string }[] = [
   {
     title: "Branding & Digital Identity",
     body: "Building distinctive brands that communicate professionalism and create lasting impressions.",
-    href: "/branding",
   },
   {
     title: "Hosting & Technical Support",
