@@ -745,6 +745,10 @@ h3 {
   font-size: 1.0625rem;
 }
 
+.usp p + p {
+  margin-top: 1rem;
+}
+
 .price-lines {
   display: grid;
   gap: 0.35rem;

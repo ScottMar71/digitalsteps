@@ -11,6 +11,10 @@ export const metadata: Metadata = {
 
 const featured = ["norfolk-run-collective", "runpattern"];
 
+const phoneShots: Record<string, string> = {
+  "norfolk-run-collective": "/work/norfolk-run-collective-phone.jpg",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -35,6 +39,7 @@ function liveProjects(): ShowProject[] {
         slug: item.slug,
         name: item.name,
         image: item.image.src,
+        phoneImage: phoneShots[item.slug],
         url: item.url,
       },
     ];

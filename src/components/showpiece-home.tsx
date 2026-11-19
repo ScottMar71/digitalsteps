@@ -13,6 +13,7 @@ export type ShowProject = {
   slug: string;
   name: string;
   image: string;
+  phoneImage?: string;
   url: string;
 };
 
@@ -46,18 +47,20 @@ function Shots({
   active,
   sizes,
   preloadFirst = false,
+  phone = false,
 }: {
   projects: ShowProject[];
   active: string;
   sizes: string;
   preloadFirst?: boolean;
+  phone?: boolean;
 }) {
   return (
     <div className="frame-screen">
       {projects.map((project, index) => (
         <Image
           key={project.slug}
-          src={project.image}
+          src={phone ? (project.phoneImage ?? project.image) : project.image}
           alt=""
           fill
           sizes={sizes}
@@ -208,7 +211,7 @@ export function ShowpieceHome({ projects }: { projects: ShowProject[] }) {
           <div className="stage" id="sites" ref={stageRef}>
             <div className="stage-rig" ref={rigRef} aria-hidden="true">
               <div className="frame frame-phone">
-                <Shots projects={projects} active={project.slug} sizes="180px" />
+                <Shots projects={projects} active={project.slug} sizes="180px" phone />
               </div>
               <div className="frame frame-browser">
                 <div className="frame-bar">
